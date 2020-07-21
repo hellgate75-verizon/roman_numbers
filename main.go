@@ -14,8 +14,8 @@ var fg *flag.FlagSet
 func init() {
 	model.Init()
 	fg = flag.NewFlagSet("roman-numbers", flag.ContinueOnError)
-	fg.Int64Var(&in, "in", 0, fmt.Sprintf("Number for the conversion [1...%v]", model.NumberConversionLimit))
-	fg.Int64Var(&max, "max", 0, fmt.Sprint("Change limit to a new number"))
+	fg.Int64Var(&in, "in", int64(0), fmt.Sprintf("Number for the conversion [1...%v]", model.NumberConversionLimit))
+	fg.Int64Var(&max, "max", int64(0), fmt.Sprint("Change limit to a new number"))
 }
 
 func main() {
@@ -34,8 +34,8 @@ func main() {
 	// Check Pre-Conditions
 	state := model.CheckNumber(in)
 	if ! state {
-		fmt.Println("Error: Number of of bounds")
-		fmt.Println("roman-number -in <number>")
+		fmt.Println("Error: Number is out of bounds")
+		fmt.Println("roman-number -in <number> -max [input-limit]")
 		fg.PrintDefaults()
 		os.Exit(2)
 	}

@@ -30,7 +30,7 @@ func Init() {
 
 // Check the input pre-conditions
 func CheckNumber(i int64) bool {
-	return i > 0 && i < NumberConversionLimit
+	return i > 0 && i <= NumberConversionLimit
 }
 
 func orderKeys() {
