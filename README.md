@@ -19,7 +19,8 @@ Sample command lines:
 Roman number for 500 is D
 
 > roman_numbers -in 5000 -max 5000
-Roman number for 500 is D
+Using upper limit 5000 instead of 3000
+Roman number for 5000 is MMMMM
 
 ```
 
